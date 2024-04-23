@@ -16,9 +16,12 @@ public class HowOldAreYou {
         // Java では、 try{ XXXXXXXX } catch(エラーの型 変数) { XXXXXXXXXXXXXXXXXX} と書く
         try {
             while (true) {
-                // String str = reader.readLine();
                 System.out.println("何歳ですか?");
                 String line = reader.readLine();
+                if (line.equals("q") || line.equals("e")) {
+                    System.out.println("繰り返しを終了します。");
+                    break;
+                }
                 int age = Integer.parseInt(line);
                 if (age < 0 || age >= 120) {
                     System.out.println("年齢は0以上120未満の範囲で入力して下さい。");
